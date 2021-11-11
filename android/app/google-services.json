@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "421701614151",
+    "project_id": "festivalny-e0c8b",
+    "storage_bucket": "festivalny-e0c8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421701614151:android:f389f3a208ad6fe38b0f62",
+        "android_client_info": {
+          "package_name": "com.thdev.festivalny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "421701614151-gpchg79ubj4c9pe050b7qat711hs490v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thdev.festivalny",
+            "certificate_hash": "a492896ee400aad13aa66b81fd072d1b6e709253"
+          }
+        },
+        {
+          "client_id": "421701614151-v782ucu5jps62kkdqcp5rnpd39nfm85p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrz-doErhpPQI3Kug0lvHGSGjkpEjNFzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421701614151-v782ucu5jps62kkdqcp5rnpd39nfm85p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

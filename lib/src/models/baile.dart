@@ -10,6 +10,7 @@ class Baile {
   final String academia;
   final String participantes;
   final bool selected;
+  final bool tieneFoto;
 
   Baile({
     required this.docid,
@@ -18,6 +19,7 @@ class Baile {
     required this.academia,
     required this.participantes,
     required this.selected,
+    required this.tieneFoto,
   });
 
   factory Baile.fromDocument(Map<String, dynamic> data, String docid) {
@@ -28,6 +30,7 @@ class Baile {
       academia: data["academia"].toString(),
       participantes: data["participantes"].toString(),
       selected: data["selected"] ?? false,
+      tieneFoto: data["tieneFoto"] ?? false,
     );
 
     return _this;
@@ -50,7 +53,7 @@ class _ToTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _pink = Colors.pink.withOpacity(0.85);
+    final _pink = Colors.pink.withOpacity(0.7);
     return Card(
       color: baile.selected ? _pink : Colors.white,
       child: ListTile(

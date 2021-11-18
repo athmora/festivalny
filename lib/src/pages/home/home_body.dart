@@ -51,11 +51,27 @@ class _HomeBodyState extends State<HomeBody> {
         itemCount: bailes.length,
         itemBuilder: (_, i) => bailes[i].toTile,
       );
+    } else if (FirebaseProvider.parte.mostrarPreFestival) {
+      return _refresher(child: const CountPage());
+    } else if (FirebaseProvider.parte.mostrarCorte) {
+      return _refresher(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0),
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(color: Colors.pink.withOpacity(.7)),
+          child: const Center(
+            child: Text(
+              "Estamos en el corte\nVolveremos en unos minutos!\nYa viene la segunda parte :)",
+              style: TextStyle(color: Colors.white, fontSize: 25),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      );
     } else {
-      if (FirebaseProvider.parte.mostrarPreFestival) {
-        return const CountPage();
-      } else {
-        return Container(
+      return _refresher(
+        child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 32.0),
           height: double.infinity,
           width: double.infinity,
@@ -67,9 +83,16 @@ class _HomeBodyState extends State<HomeBody> {
               textAlign: TextAlign.center,
             ),
           ),
-        );
-      }
+        ),
+      );
     }
+  }
+
+  Widget _refresher({required Widget child}) {
+    return InkWell(
+      child: child,
+      onTap: () => refresh(),
+    );
   }
 
   @override

@@ -11,6 +11,7 @@ class DetallePage extends StatelessWidget {
   final _style = const TextStyle(color: Colors.black, fontSize: 24);
   @override
   Widget build(BuildContext context) {
+    final String _fotoUrl  = baile.tieneFoto ? "assets/${baile.numero}.png" : "assets/nophoto.png";
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +30,7 @@ class DetallePage extends StatelessWidget {
             top: 0,
             left: 0,
             child: Image.asset(
-              "assets/${baile.numero}.png",
+              _fotoUrl,
               fit: BoxFit.contain,
               color: baile.selected ? null : Colors.grey,
               height: size.height,

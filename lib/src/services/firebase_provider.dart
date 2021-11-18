@@ -15,16 +15,16 @@ class FirebaseProvider {
         )
         .get();
 
-    late QuerySnapshot<Baile> _allBailes;
-
     final _parteInformer = parteDoc.docs.first.data();
 
     parte = _parteInformer;
 
+    late QuerySnapshot<Baile> _allBailes;
+
     if (_parteInformer.mostrarPrimeraParte) {
       _allBailes = await FirebaseFirestore.instance
           .collection("bailes")
-          .where("numero", isLessThanOrEqualTo: 6)
+          .where("numero", isLessThanOrEqualTo: 8)
           .withConverter(
             fromFirestore: (snapshot, _) =>
                 Baile.fromDocument(snapshot.data()!, snapshot.id),
@@ -34,7 +34,7 @@ class FirebaseProvider {
     } else {
       _allBailes = await FirebaseFirestore.instance
           .collection("bailes")
-          .where("numero", isGreaterThan: 6)
+          .where("numero", isGreaterThan: 8)
           .withConverter(
             fromFirestore: (snapshot, _) =>
                 Baile.fromDocument(snapshot.data()!, snapshot.id),

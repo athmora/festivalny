@@ -21,12 +21,13 @@ class Parte {
   bool get mostrarPrimeraParte => parte == ParteEnum.primera;
   bool get mostrarSegundaParte => parte == ParteEnum.segunda;
   bool get mostrarPreFestival => parte == ParteEnum.pre;
+  bool get mostrarCorte => parte == ParteEnum.corte;
   bool get mostrarPostFestival => parte == ParteEnum.post;
   bool get enFestival =>
       parte == ParteEnum.primera || parte == ParteEnum.segunda;
 }
 
-enum ParteEnum { pre, primera, segunda, post }
+enum ParteEnum { pre, primera, segunda, post, corte }
 
 extension ParteEnumExt on ParteEnum {
   String get toStr {
@@ -37,6 +38,9 @@ extension ParteEnumExt on ParteEnum {
         break;
       case ParteEnum.segunda:
         s = "segunda";
+        break;
+      case ParteEnum.corte:
+        s = "corte";
         break;
       case ParteEnum.pre:
         s = "pre";
@@ -60,6 +64,9 @@ ParteEnum _parteEnumFromString(String parte) {
       break;
     case "pre":
       e = ParteEnum.pre;
+      break;
+    case "corte":
+      e = ParteEnum.corte;
       break;
     case "post":
       e = ParteEnum.post;
